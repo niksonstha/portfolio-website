@@ -12,6 +12,7 @@ function Projects() {
       flexDirection="column"
       justifyContent="center"
       alignItems="center"
+      id="project"
     >
       <Box height="30vh">
         <Text

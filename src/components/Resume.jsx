@@ -1,9 +1,19 @@
 import { Box, Button, Grid, GridItem, Text } from "@chakra-ui/react";
 import { BiRightArrow } from "react-icons/bi";
+import cv from "../assets/nikson-shrestha-cv.pdf";
 
 const Resume = () => {
+  const handleDownloadClick = () => {
+    // Create a temporary anchor element
+    const anchor = document.createElement("a");
+    anchor.href = cv;
+    anchor.download = "nikson-shrestha-cv.pdf";
+
+    // Programmatically trigger a click event on the anchor
+    anchor.click();
+  };
   return (
-    <Box height="max-content" bgColor="#5C5470" color="white">
+    <Box height="max-content" bgColor="#5C5470" color="white" id="resume">
       <Box width="80%" margin="0 auto">
         <Text
           letterSpacing={9}
@@ -34,6 +44,7 @@ const Resume = () => {
               bgColor: "#FAF0E6",
               transition: "ease-in 0.4s",
             }}
+            onClick={handleDownloadClick}
           >
             DOWNLOAD CV
           </Button>

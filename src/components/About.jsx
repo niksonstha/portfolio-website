@@ -5,6 +5,12 @@ import { AiOutlineInstagram } from "react-icons/ai";
 import { LiaTelegramPlane } from "react-icons/lia";
 
 const About = () => {
+  const scrollToSection = (sectionId) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   return (
     <Box
       height="100vh"
@@ -15,6 +21,7 @@ const About = () => {
       alignItems="center"
       gap={20}
       justifyContent="center"
+      id="about"
     >
       <Box
         height="60vh"
@@ -74,6 +81,7 @@ const About = () => {
               transition: "ease-in 0.4s",
             }}
             width="50%"
+            onClick={() => scrollToSection("resume")}
           >
             RESUME
           </Button>
@@ -91,6 +99,7 @@ const About = () => {
               transition: "ease-in 0.4s",
             }}
             width="50%"
+            onClick={() => scrollToSection("project")}
           >
             PROJECT
           </Button>

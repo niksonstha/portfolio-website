@@ -1,6 +1,12 @@
 import { Box, ListItem, UnorderedList } from "@chakra-ui/react";
 
 const Navbar = () => {
+  const scrollToSection = (sectionId) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   return (
     <Box
       height="100px"
@@ -37,6 +43,7 @@ const Navbar = () => {
               color: "white",
               transition: "ease-in 0.3s",
             }}
+            onClick={() => scrollToSection("about")}
           >
             ABOUT
           </ListItem>
@@ -48,6 +55,7 @@ const Navbar = () => {
               color: "white",
               transition: "ease-in 0.3s",
             }}
+            onClick={() => scrollToSection("resume")}
           >
             RESUME
           </ListItem>
@@ -59,6 +67,7 @@ const Navbar = () => {
               color: "white",
               transition: "ease-in 0.3s",
             }}
+            onClick={() => scrollToSection("project")}
           >
             PROJECT
           </ListItem>
@@ -70,6 +79,7 @@ const Navbar = () => {
               color: "white",
               transition: "ease-in 0.3s",
             }}
+            onClick={() => scrollToSection("contact")}
           >
             CONTACT
           </ListItem>
