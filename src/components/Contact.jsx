@@ -7,8 +7,14 @@ import {
   Input,
   Textarea,
 } from "@chakra-ui/react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 function Contact() {
+  useEffect(() => {
+    AOS.init({ duration: 3000 });
+  }, []);
   return (
     <Box
       height="max-content"
@@ -25,6 +31,7 @@ function Contact() {
         fontSize="3rem"
         fontWeight={800}
         mt="100px"
+        data-aos="zoom-out"
       >{`Let's talk`}</Heading>
 
       <Box
@@ -35,6 +42,7 @@ function Contact() {
         color="black"
         mt={70}
         borderRadius={10}
+        data-aos="slide-right"
       >
         <FormControl>
           <Box display="flex" gap={40} justifyContent="space-between">

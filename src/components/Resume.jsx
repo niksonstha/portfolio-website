@@ -1,6 +1,9 @@
 import { Box, Button, Grid, GridItem, Text } from "@chakra-ui/react";
 import { BiRightArrow } from "react-icons/bi";
 import cv from "../assets/nikson-shrestha-cv.pdf";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 const Resume = () => {
   const handleDownloadClick = () => {
@@ -12,6 +15,10 @@ const Resume = () => {
     // Programmatically trigger a click event on the anchor
     anchor.click();
   };
+
+  useEffect(() => {
+    AOS.init({ duration: 3000 });
+  }, []);
   return (
     <Box height="max-content" bgColor="#5C5470" color="white" id="resume">
       <Box width="80%" margin="0 auto">
@@ -20,6 +27,7 @@ const Resume = () => {
           fontSize="3rem"
           fontWeight={800}
           textAlign="center"
+          data-aos="zoom-in"
         >
           RESUME
         </Text>
@@ -29,7 +37,7 @@ const Resume = () => {
           width="50%"
           margin="70px auto"
         >
-          <Text fontSize="1.7rem" fontWeight={600}>
+          <Text fontSize="1.7rem" fontWeight={600} data-aos="slide-right">
             Education
           </Text>
           <Button
@@ -45,6 +53,7 @@ const Resume = () => {
               transition: "ease-in 0.4s",
             }}
             onClick={handleDownloadClick}
+            data-aos="slide-left"
           >
             DOWNLOAD CV
           </Button>
@@ -61,6 +70,7 @@ const Resume = () => {
           alignItems="center"
           justifyContent="center"
           gap="50"
+          data-aos="slide-right"
         >
           <Box>
             <Text color="#5C5470">2076 - Current</Text>
@@ -85,6 +95,7 @@ const Resume = () => {
           alignItems="center"
           justifyContent="center"
           gap="50"
+          data-aos="slide-left"
         >
           <Box mt={50}>
             <Box>

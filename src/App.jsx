@@ -8,7 +8,7 @@ import Contact from "./components/Contact";
 
 function App() {
   return (
-    <Box className="App">
+    <Box className="App" overflow="hidden">
       <Navbar />
       <About />
       <Resume />

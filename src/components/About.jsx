@@ -3,6 +3,9 @@ import profile from "../assets/profile.jpg";
 import { BiLogoFacebook } from "react-icons/bi";
 import { AiOutlineInstagram } from "react-icons/ai";
 import { LiaTelegramPlane } from "react-icons/lia";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 const About = () => {
   const scrollToSection = (sectionId) => {
@@ -11,6 +14,11 @@ const About = () => {
       section.scrollIntoView({ behavior: "smooth" });
     }
   };
+
+  useEffect(() => {
+    AOS.init({ duration: 3000 });
+  }, []);
+
   return (
     <Box
       height="100vh"
@@ -33,6 +41,7 @@ const About = () => {
         justifyContent="center"
         flexDirection="column"
         boxShadow="-15px 15px 50px 2px #352F44"
+        data-aos="slide-right"
       >
         <Image
           src={profile}
@@ -62,7 +71,8 @@ const About = () => {
           <LiaTelegramPlane cursor="pointer" />
         </Box>
       </Box>
-      <Box color="white">
+
+      <Box color="white" data-aos="slide-left">
         <Box>
           <Heading fontSize="5rem">Hello,</Heading>
           <Text fontSize="1.7rem">{`Here's who I am & what I do`}</Text>

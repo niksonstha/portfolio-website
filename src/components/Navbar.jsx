@@ -30,7 +30,12 @@ const Navbar = () => {
         width="100%"
       >
         <Box>
-          <ListItem cursor="pointer" fontSize="1.4rem" fontWeight={800}>
+          <ListItem
+            cursor="pointer"
+            fontSize="1.4rem"
+            fontWeight={800}
+            onClick={() => scrollToSection("about")}
+          >
             ImNIXON
           </ListItem>
         </Box>

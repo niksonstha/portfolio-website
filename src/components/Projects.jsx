@@ -1,8 +1,15 @@
 import { Box, Heading, Image, Link, Text } from "@chakra-ui/react";
 import weatherapp from "../assets/weatherapp.png";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 function Projects() {
   const link = "https://github.com/niksonstha/weather-app-react";
+
+  useEffect(() => {
+    AOS.init({ duration: 3000 });
+  }, []);
   return (
     <Box
       height="100vh"
@@ -20,6 +27,7 @@ function Projects() {
           fontSize="3rem"
           fontWeight={800}
           textAlign="center"
+          data-aos="zoom-in"
         >
           PROJECT
         </Text>
@@ -29,6 +37,7 @@ function Projects() {
           fontWeight="200"
           fontSize="0.9rem"
           margin="0px auto"
+          data-aos="zoom-in"
         >
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Non
           perferendis tempore quae culpa quia facere ut corrupti velit magnam
@@ -45,6 +54,7 @@ function Projects() {
         color="black"
         display="flex"
         alignItems="center"
+        data-aos="slide-right"
       >
         <Box width="60%" padding={10}>
           <Heading color="#5C5470" fontSize="1.2rem" fontWeight={500}>
